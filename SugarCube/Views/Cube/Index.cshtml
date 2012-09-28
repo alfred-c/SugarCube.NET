@@ -1,0 +1,61 @@
+﻿@using SugarCube.Models
+@model CubeViewModel
+@{
+    ViewBag.Title = "SugarCube";
+}
+
+<div id="cubes">
+    @foreach (JournalEntry entry in Model.JournalEntries)
+    {
+        Html.RenderPartial("Cube", entry);
+    }
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/ckeditor")
+    <script type="text/javascript">
+        $(function () {
+            var $container = $("#cubes");
+
+            $container.isotope({
+                itemSelector: '.item',
+                layoutMode: 'masonry'
+            });
+
+            // filter items when filter link is clicked
+            $('#filters a').on("click", function () {
+                var selector = $(this).attr('data-filter');
+                $container.isotope({ filter: selector });
+                $('#filters li').removeClass("active");
+                $(this).closest("li").addClass("active");
+            });
+
+            if (!Modernizr.inputtypes.date) {
+                $("input[type=date]").datepicker();
+            }
+
+            CKEDITOR.on('instanceCreated', function (event) {
+                var editor = event.editor,
+                    element = editor.element;
+                if (element.getAttribute('id') == 'title')
+                {
+                    editor.on('configLoaded', function () {
+                        editor.config.removePlugins = 'find, flash, forms, iframe, image, newpage, scayt, smiley, templates, wsc';
+                        editor.config.toolbar = 'Title';
+                    });
+                }
+                else {
+                    editor.on('configLoaded', function () {
+                        editor.config.removePlugins = 'find, flash, forms, iframe, image, newpage, scayt, smiley, templates, wsc';
+                        editor.config.toolbar = 'Content';
+                    });
+                }
+            });
+
+            //CKEDITOR.disableAutoInline = true;
+            //var editor = CKEDITOR.inline('entry');
+        });
+
+    </script>
+}

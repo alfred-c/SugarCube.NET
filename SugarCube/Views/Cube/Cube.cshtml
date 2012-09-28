@@ -1,0 +1,32 @@
+﻿@model SugarCube.Models.JournalEntry
+
+@helper CalculateSize(string text, string image)
+{
+    //Some algorithm to calculate cube size
+    if (!String.IsNullOrEmpty(text) && text.Length > 25)
+    {
+    <text>h-2</text>
+    }
+    else
+    {
+    <text>h-1</text>
+    }
+    if (!String.IsNullOrEmpty(image))
+    {
+    <text> v-2</text>
+    }
+    else
+    {
+    <text> v-1</text>
+    }
+}
+
+<div class="item cube @CalculateSize(Model.Text, Model.Image) @Model.Type">
+    <b>@Model.Title</b>
+    <small>@Model.Date.ToShortDateString()</small><br />
+    @if (!String.IsNullOrEmpty(Model.Image))
+    {
+        <img src="@Url.Content(Model.Image)" /><br />
+    }
+    @Model.Text
+</div>
