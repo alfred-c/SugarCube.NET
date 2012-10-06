@@ -166,6 +166,7 @@
     <Content Include="Content\images\brand.png" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\images\icons-sm.png" />
     <Content Include="Content\images\icons.png" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\tests\icons-test.html" />
@@ -687,6 +688,7 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\textchange.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

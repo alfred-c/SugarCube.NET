@@ -32,49 +32,105 @@
         </div>
     </div>
 
-    <div id="newjournal" style="display: none;" class="well">
+    <div id="newjournal" style="display: none; background-color: #f9f9f9; border: 1px solid #ddd; margin-bottom: 20px">
         <div class="row-fluid">
-            <div class="span10">
-                <form class="form-horizontal">
+            <div class="span12">
+                <form class="form-horizontal" action="/Cube/CreateJournal" method="post">
 
                     <legend>New Journal Entry</legend>
-                    <div class="control-group">
-                        <label class="control-label" for="inputDate">Date:</label>
-                        <div class="controls">
-                            <input id="date" type="date" placeholder="Date" />
+                    <div class="row-fluid">
+                        <div class="span8">
+                            <div class="control-group">
+                                <label class="control-label" for="inputDate">Date:</label>
+                                <div class="controls">
+                                    <input id="date" type="date" placeholder="Date" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Title:</label>
+                                <div class="controls">
+                                    <textarea name="title" style="display:none;"></textarea>
+                                    <div contenteditable="true" id="title" data-target="title" style="min-height: 20px;"></div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="entry">Content:</label>
+                                <div class="controls">
+                                    <textarea name="entry" style="display:none;"></textarea>
+                                    <div contenteditable="true" id="entry" data-target="entry" style="min-height: 150px;"></div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <button id="submit" type="submit" class="btn btn-primary">Create</button>
+                                    <button id="cancel" class="btn">Cancel</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label">Title:</label>
-                        <div class="controls">
-                            <div contenteditable="true" id="title" style="min-height:20px;"></div>
+
+
+
+                        <div class="span1">
+
+                            <div class="tabbable tabs-left tooltips">
+                                <div style="margin-bottom: 5px;">
+                                    <a href="#" rel="tooltip" class="btn" data-toggle="button" title="happy"><i class="sc-icon-sm-happy"></i></a>
+                                    <a href="#" rel="tooltip" class="btn" data-toggle="button" title="heartbreak"><i class="sc-icon-sm-heartbreak"></i></a>
+                                    <a href="#" rel="tooltip" class="btn" data-toggle="button" title="work"><i class="sc-icon-sm-work"></i></a>
+                                    <a href="#" rel="tooltip" class="btn" data-toggle="button" title="finance"><i class="sc-icon-sm-finance"></i></a>
+                                    <a href="#" rel="tooltip" class="btn" data-toggle="button" title="family"><i class="sc-icon-sm-family"></i></a>
+                                    <a href="#" rel="tooltip" class="btn" data-toggle="button" title="misc"><i class="sc-icon-sm-misc"></i></a>
+                               <input type="hidden" name="categories" />
+                                </div>
+
+                                <ul class="nav nav-tabs">
+
+                                    <li class="active"><a href="#tab1" data-toggle="tab" rel="tooltip" title="custom tags" style="min-width: 35px;"><i class="icon-tag"></i></a></li>
+                                    <li><a href="#tab2" data-toggle="tab" rel="tooltip" title="permissions" style="min-width: 35px;"><i class="icon-group"></i></a></li>
+
+                                </ul>
+
+                            </div>
                         </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="entry">Content:</label>
-                        <div class="controls">
-                            <div contenteditable="true" id="entry" style="min-height:150px;"></div>
+
+                        <div class="span2 tab-content">
+                            <div class="tab-pane active " id="tab1">
+                                <div class="input-prepend">
+                                    <span class="add-on"><i class="icon-search foreground-color"></i></span>
+                                    <input type="text" class="span9" />
+                                </div>
+                                @foreach (SelectListItem item in Model.Tags)
+                                {
+                                    <a class="label" data-value="@item.Value">@item.Text</a>
+                                }
+                                <br />
+                                <span id="addTag" contenteditable="true" class="input-medium" style="color: #aaa;">Add new tag</span>
+                                <br />
+                                <a href="#">Manage tags</a>
+                                <input type="hidden" name="tags" style="display:none;" />
+                            </div>
+                            <div class="tab-pane" id="tab2">
+
+                                @foreach (SelectListItem item in Model.Permissions)
+                                {
+                                    <span  data-value="@item.Value"><i class="icon-eye-open unselected" style="cursor:pointer;"></i> <i class="icon-comment unselected" style="cursor:pointer;"></i> <a href="#" class="permission">@item.Text</a></span><br />
+                                }
+
+                                  <input type="hidden" name="visible" style="display:none;" />
+                                    <input type="hidden" name="comment" style="display:none;" />
+                            </div>
+
+
+
+
                         </div>
-                    </div>
-                    <div class="control-group">
-                        <div class="controls">
-                            <button type="submit" class="btn btn-primary">Create</button>
-                            <button id="cancel" class="btn">Cancel</button>
-                        </div>
+
                     </div>
                 </form>
             </div>
-            <div class="span1 offset1">
-                <button class="btn pull-right" data-toggle="button"><i class="sc-icon-happy"></i></button>
-                <button class="btn pull-right" data-toggle="button"><i class="sc-icon-heartbreak"></i></button>
-                <button class="btn pull-right" data-toggle="button"><i class="sc-icon-work"></i></button>
-                <button class="btn pull-right" data-toggle="button"><i class="sc-icon-finance"></i></button>
-                <button class="btn pull-right" data-toggle="button"><i class="sc-icon-family"></i></button>
-                <button class="btn pull-right" data-toggle="button"><i class="sc-icon-misc"></i></button>
-
-            </div>
         </div>
     </div>
+
 
     @RenderBody()
 
@@ -98,6 +154,7 @@
     @Scripts.Render("~/bundles/jqueryui")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/isotope")
+    @Scripts.Render("~/bundles/textchange")
     @RenderSection("scripts", required: false)
     <script type="text/javascript">
         $(function () {
@@ -105,6 +162,67 @@
                 $("#newjournal").slideToggle();
                 $("#title, #entry").attr("contenteditable", "true");
                 e.preventDefault();
+            });
+
+            $(".tooltips").tooltip({ selector: "a[rel='tooltip']", placement: "right" });
+
+
+            $("a.label").on("click", function () {
+                $(this).toggleClass("background-color");
+            });
+
+            $("#addTag").on("focus", function () {
+                $(this).html("");
+                $(this).css("color", "#000");
+                $(this).toggleClass("editablecontent");
+            });
+
+            $("#addTag").on("blur", function () {
+                $(this).html("Add new tag");
+                $(this).css("color", "#aaa");
+                $(this).toggleClass("editablecontent ");
+            });
+
+            $(".permission").on("click", function () {
+                var $visible = $(this).parent().find("i.icon-eye-open");
+                var $comment = $(this).parent().find("i.icon-comment");
+                if (!$visible.hasClass("selected")) {
+                    $visible.toggleClass("selected unselected");
+                }
+                else if ($visible.hasClass("selected") && !$comment.hasClass("selected")) {
+                    $comment.toggleClass("selected unselected");
+                }
+                else if ($visible.hasClass("selected") && $comment.hasClass("selected")) {
+                    $visible.toggleClass("selected unselected");
+                    $comment.toggleClass("selected unselected");
+                }
+            });
+
+            $("i.icon-eye-open, i.icon-comment").on("click", function () {
+                $(this).toggleClass("selected unselected");
+            });
+              
+            $("#submit").on("click", function () {
+                var arr1 = $("a.active[rel='tooltip']").map(function () {
+                    return $(this).attr("data-original-title");
+                }).get();
+                $("input[name='categories']").val(arr1.join(","));
+
+                var arr2 = $("a.label.background-color").map(function () {
+                    return $(this).attr("data-value");
+                }).get();
+                $("input[name='tags']").val(arr2.join(","));
+
+                var arr3 = $("i.icon-eye-open.selected").map(function () {
+                    return $(this).parent().attr("data-value");
+                }).get();
+                $("input[name='visible']").val(arr3.join(","));
+
+                var arr4 = $("i.icon-comment.selected").map(function () {
+                    return $(this).parent().attr("data-value");
+                }).get();
+                $("input[name='comment']").val(arr4.join(","));
+                
             });
         });
     </script>

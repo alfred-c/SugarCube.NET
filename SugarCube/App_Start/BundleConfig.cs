@@ -60,6 +60,9 @@ namespace SugarCube
 
             bundles.Add(new ScriptBundle("~/bundles/ckeditor").Include(
                 "~/Scripts/ckeditor/ckeditor.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/textchange").Include(
+                "~/Scripts/textchange.js"));
         }
     }
 }
