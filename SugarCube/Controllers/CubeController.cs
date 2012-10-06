@@ -12,9 +12,9 @@ namespace SugarCube.Controllers
         //
         // GET: /Cube/
 
-        public ActionResult Index()
+        private void Initialize(out List<JournalEntry> cubes, out  SelectListItem[] tags, out  SelectListItem[] permissions)
         {
-            List<JournalEntry> cubes = new List<JournalEntry>(){
+            cubes = new List<JournalEntry>(){
                 new JournalEntry{ Title = "Hello World 1", Date=DateTime.Today, Text = "This is a short message.", Type="journal" },
                 new JournalEntry{ Title = "Hello World 2", Date=DateTime.Today, Text = "This is a somewhat longer message.", Type="other" },
                 new JournalEntry{ Title = "Hello World 3", Date=DateTime.Today, Text = "This is a message with an image.", Image = "~/Content/Images/logo.png", Type="journal"},
@@ -30,7 +30,7 @@ namespace SugarCube.Controllers
 
             };
 
-            SelectListItem[] permissions = new SelectListItem[] {
+            permissions = new SelectListItem[] {
                 new SelectListItem{ Text = "my eyes only", Value = "1" },
                 new SelectListItem{ Text = "dear best friends", Value = "2" },
                 new SelectListItem{ Text = "just friends", Value = "3"},
@@ -38,14 +38,21 @@ namespace SugarCube.Controllers
                 new SelectListItem{ Text = "friends & strangers", Value = "5"}
             };
 
-            SelectListItem[] tags = new SelectListItem[] {
+            tags = new SelectListItem[] {
                 new SelectListItem{ Text = "tag 1", Value = "1" },
                 new SelectListItem{ Text = "tag 2", Value = "2" },
                 new SelectListItem{ Text = "tag 3", Value = "3"},
                 new SelectListItem{ Text = "tag 4", Value = "4"},
                 new SelectListItem{ Text = "tag 5", Value = "5"}
             };
+        }
 
+        public ActionResult Index()
+        {
+            List<JournalEntry> cubes;
+            SelectListItem[] tags;
+            SelectListItem[] permissions;
+            Initialize(out cubes, out tags, out permissions);
             return View(new CubeViewModel() { JournalEntries = cubes, Tags = tags, Permissions = permissions });
         }
 
@@ -57,7 +64,11 @@ namespace SugarCube.Controllers
         [HttpPost]
         public ActionResult CreateJournal(FormCollection form)
         {
-            return View("Index");
+            List<JournalEntry> cubes;
+            SelectListItem[] tags;
+            SelectListItem[] permissions;
+            Initialize(out cubes, out tags, out permissions);
+            return View("Index", new CubeViewModel() { JournalEntries = cubes, Tags = tags, Permissions = permissions });
         }
 
     }
