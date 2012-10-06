@@ -104,7 +104,7 @@
                                     <a class="label" data-value="@item.Value">@item.Text</a>
                                 }
                                 <br />
-                                <span id="addTag" contenteditable="true" style="color: #aaa; width:150px;">Add new tag</span>
+                                <span id="addTag" contenteditable="true" style="color: #aaa; width:150px; display: inline-block;">Add new tag</span>
                                 <br />
                                 <a href="#">Manage tags</a>
                                 <input type="hidden" name="tags" style="display:none;" />
@@ -171,6 +171,11 @@
             $("a.label").on("click", function () {
                 $(this).toggleClass("background-color");
             });
+
+            $("#entry, #title").on("textchange", function () {
+                $("textarea[name='" + $(this).attr("data-target") + "']").val($(this).html());
+            });
+
 
             $("#addTag").on("focus", function () {
                 $(this).html("");

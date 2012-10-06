@@ -62,6 +62,7 @@ namespace SugarCube.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult CreateJournal(FormCollection form)
         {
             List<JournalEntry> cubes;
