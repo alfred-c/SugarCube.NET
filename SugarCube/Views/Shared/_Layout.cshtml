@@ -113,7 +113,7 @@
 
                                 @foreach (SelectListItem item in Model.Permissions)
                                 {
-                                    <span  data-value="@item.Value"><i class="icon-eye-open unselected" style="cursor:pointer;"></i> <i class="icon-comment unselected" style="cursor:pointer;"></i> <a href="#" class="permission">@item.Text</a></span><br />
+                                    <span  data-value="@item.Value"><a href="#" style="text-decoration:none;" ><i class="icon-eye-open unselected"></i></a> <a href="#" style="text-decoration:none;"><i class="icon-comment unselected" ></i></a> <a href="#" class="permission">@item.Text</a></span><br />
                                 }
 
                                 <a href="#">Manage crowds</a>
