@@ -31,20 +31,38 @@ namespace SugarCube.Controllers
             };
 
             permissions = new SelectListItem[] {
-                new SelectListItem{ Text = "my eyes only", Value = "1" },
-                new SelectListItem{ Text = "dear best friends", Value = "2" },
-                new SelectListItem{ Text = "just friends", Value = "3"},
+                new SelectListItem{ Text = "friends & strangers", Value = "5"},
                 new SelectListItem{ Text = "maybe friends", Value = "4"},
-                new SelectListItem{ Text = "friends & strangers", Value = "5"}
+                new SelectListItem{ Text = "just friends", Value = "3"},
+                new SelectListItem{ Text = "dear best friends", Value = "2" },
+                new SelectListItem{ Text = "my eyes only", Value = "1" },
+                                new SelectListItem{ Text = "friends & strangers", Value = "5"},
+                new SelectListItem{ Text = "maybe friends", Value = "4"},
+                new SelectListItem{ Text = "just friends", Value = "3"},
+                new SelectListItem{ Text = "dear best friends", Value = "2" },
+                new SelectListItem{ Text = "my eyes only", Value = "1" }
             };
 
-            tags = new SelectListItem[] {
-                new SelectListItem{ Text = "tag 1", Value = "1" },
-                new SelectListItem{ Text = "tag 2", Value = "2" },
-                new SelectListItem{ Text = "tag 3", Value = "3"},
-                new SelectListItem{ Text = "tag 4", Value = "4"},
-                new SelectListItem{ Text = "tag 5", Value = "5"}
+
+            Random rand = new Random();
+            var tagsList = new List<SelectListItem>();
+            for(int i = 1; i <= 50; i++)
+            {
+                switch (rand.Next(1, 3))
+                {
+                    case 1:
+                        tagsList.Add(new SelectListItem { Text = "cat " + i, Value = i.ToString() });
+                        break;
+                    case 2:
+                        tagsList.Add(new SelectListItem { Text = "calvin & hobbes " + i, Value = i.ToString() });
+                        break;
+                    case 3:
+                        tagsList.Add(new SelectListItem { Text = "elephant " + i, Value = i.ToString() });
+                        break;
+                }
             };
+
+            tags = tagsList.ToArray();
         }
 
         public ActionResult Index()
