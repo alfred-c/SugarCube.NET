@@ -346,20 +346,35 @@
                 var $context = $(this);
                 if ($(this).hasClass("onTop")) {
 
-                    $context.toggleClass("scale", 500).animate({
-                        top: $context.data("top"),
-                        left: $context.data("left")
-                    }).promise().done(function () {
+                    $context.toggleClass("scale", 500).promise().done(function () {
+                        if (Modernizr.prefixed("webkitTransform")) {
+                            $(this).css("webkitTransform", $context.data("webkitTransform"));
+                        }
+                        else {
+                            $context.animate({
+                                top: $context.data("top"),
+                                left: $context.data("left")
+                            });
+                        }
                         $(this).toggleClass("onTop");
                     });
+                  
+                    
                 }
                 else {
                     $(this).data("top", $(this).css("top"));
                     $(this).data("left", $(this).css("left"));
-                    $(this).animate({
+                    if (Modernizr.prefixed("webkitTransform")) {
+                        $(this).data("webkitTransform", $(this).css("webkitTransform"));
+                        $(this).css("webkitTransform", "none");
+                    }
+                    $(this).toggleClass("onTop").animate({
+                       
                         top: "0px",
-                        left: "0px"
-                    }).toggleClass("onTop").toggleClass("scale", 500);
+                        left: "0px",
+                      
+                     
+                    }).toggleClass("scale", 500);
                 }
             });
 
