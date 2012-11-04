@@ -1,4 +1,4 @@
-﻿body {
+﻿/*body {
     font-size: .85em;
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     color: #232323;
@@ -7,12 +7,12 @@
 
 header, footer, nav, section {
     display: block;
-}
+}*/
 
 
 /* Styles for basic forms
 -----------------------------------------------------------*/
-fieldset {
+/*fieldset {
     border: 1px solid #ddd;
     padding: 0 1.4em 1.4em 1.4em;
     margin: 0 0 1.5em 0;
@@ -33,12 +33,12 @@ textarea {
 
 .editor-field {
     margin: 0.5em 0 0 0;
-}
+}*/
 
 
 /* Styles for validation helpers
 -----------------------------------------------------------*/
-.field-validation-error {
+/*.field-validation-error {
     color: #f00;
 }
 
@@ -58,7 +58,9 @@ textarea {
 
 .validation-summary-valid {
     display: none;
-}
+}*/
+
+
 
 .item
 {
@@ -94,7 +96,8 @@ textarea {
 
 .cube {
     border: 5px solid #00B4FF !important; /*f23996*/
-    /*background-color: #00B4FF !important;*/
+    background-color: #fff !important;
+    cursor: pointer;
 }
 
 .pink {
@@ -326,3 +329,34 @@ div[contenteditable], .editablecontent  {
      color: #f23996;
 }*/
 
+#newjournal .container-fluid:first-child {
+    padding-right: 19px;
+    padding-left: 19px;
+}
+
+@media (max-width: 767px) {
+    #newjournal .tab-content, #newjournal .nav-tabs {
+        display: none;
+    }
+      .form-horizontal .control-label {
+    float: none;
+    width: auto;
+    padding-top: 0;
+    text-align: left;
+  }
+  .form-horizontal .controls {
+    margin-left: 0;
+  }
+}
+
+.scale {
+    top: 0px !important;
+    left: 0px !important;
+    position: fixed;
+
+   margin: auto !important;
+    min-height: 500px;
+    width: 90%;
+
+    z-index: 1000;
+}

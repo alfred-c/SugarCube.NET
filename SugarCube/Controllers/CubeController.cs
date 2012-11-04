@@ -46,7 +46,7 @@ namespace SugarCube.Controllers
 
             Random rand = new Random();
             var tagsList = new List<SelectListItem>();
-            for(int i = 1; i <= 50; i++)
+            for(int i = 1; i <= 30; i++)
             {
                 switch (rand.Next(1, 3))
                 {
