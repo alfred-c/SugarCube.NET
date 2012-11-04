@@ -36,7 +36,7 @@ namespace SugarCube.Controllers
                 new SelectListItem{ Text = "just friends", Value = "3"},
                 new SelectListItem{ Text = "dear best friends", Value = "2" },
                 new SelectListItem{ Text = "my eyes only", Value = "1" },
-                                new SelectListItem{ Text = "friends & strangers", Value = "5"},
+                new SelectListItem{ Text = "friends & strangers", Value = "5"},
                 new SelectListItem{ Text = "maybe friends", Value = "4"},
                 new SelectListItem{ Text = "just friends", Value = "3"},
                 new SelectListItem{ Text = "dear best friends", Value = "2" },

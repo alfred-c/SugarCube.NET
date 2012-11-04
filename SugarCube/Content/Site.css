@@ -350,13 +350,13 @@ div[contenteditable], .editablecontent  {
 }
 
 .scale {
-    top: 0px !important;
-    left: 0px !important;
-    position: fixed;
-
-   margin: auto !important;
     min-height: 500px;
-    width: 90%;
+    width: 95%;
 
-    z-index: 1000;
 }
+
+.onTop {
+    z-index: 1000;
+
+}
+

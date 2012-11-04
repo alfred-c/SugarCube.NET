@@ -108,26 +108,27 @@
                             
                         </div>
                         <div class="tab-pane" id="tab2">
-                            <div class="row-fluid">
+                            <div class="row-fluid tooltips">
                                 <input type="hidden" id="commentable-value" />
                                 <input type="hidden" id="viewable-value" />
                                 <div class="span1">
-                                    <label><i class="icon-eye-open selected"></i></label>
+                                    <a href="#" rel="tooltip" title="viewable" style="text-decoration: none;"><i class="icon-eye-open selected"></i></a>
                                     <div id="viewable" style="height: 225px;"></div>
                                 </div>
                                 <div class="span1">
-                                    <label><i class="icon-comment selected"></i></label>
+                                    <a href="#" rel="tooltip" title="commentable" style="text-decoration: none;"><i class="icon-comment selected"></i></a>
                                     <div id="commentable" style="height: 225px;"></div>
                                 </div>
                                 <div class="span1">
-                                    <label><i class="icon-ban-circle selected"></i></label>
+                                    <a href="#" rel="tooltip" title="anonymous" style="text-decoration: none;"><i class="icon-ban-circle selected"></i></a>
                                     <div id="anonymous" style="height: 225px;"></div>
                                 </div>
                                 <div class="span7" style="line-height: 25px; padding-top: 15px; white-space: nowrap;">
 
                                     @foreach (SelectListItem item in Model.Permissions)
                                     {
-                                        <a href="#" class="permission">@item.Text</a><br />
+                                        @*<a href="#" class="permission">@item.Text</a><br />*@
+                                        <a href="#">@item.Text</a><br />
                                     }
                                 </div>
                             </div>
@@ -227,24 +228,24 @@
                 $(this).toggleClass("editablecontent ");
             });
 
-            $(".permission").on("click", function () {
-                var $visible = $(this).parent().find("i.icon-eye-open");
-                var $comment = $(this).parent().find("i.icon-comment");
-                if (!$visible.hasClass("selected")) {
-                    $visible.toggleClass("selected unselected");
-                }
-                else if ($visible.hasClass("selected") && !$comment.hasClass("selected")) {
-                    $comment.toggleClass("selected unselected");
-                }
-                else if ($visible.hasClass("selected") && $comment.hasClass("selected")) {
-                    $visible.toggleClass("selected unselected");
-                    $comment.toggleClass("selected unselected");
-                }
-            });
+            //$(".permission").on("click", function () {
+            //    var $visible = $(this).parent().find("i.icon-eye-open");
+            //    var $comment = $(this).parent().find("i.icon-comment");
+            //    if (!$visible.hasClass("selected")) {
+            //        $visible.toggleClass("selected unselected");
+            //    }
+            //    else if ($visible.hasClass("selected") && !$comment.hasClass("selected")) {
+            //        $comment.toggleClass("selected unselected");
+            //    }
+            //    else if ($visible.hasClass("selected") && $comment.hasClass("selected")) {
+            //        $visible.toggleClass("selected unselected");
+            //        $comment.toggleClass("selected unselected");
+            //    }
+            //});
 
-            $("i.icon-eye-open, i.icon-comment").on("click", function () {
-                $(this).toggleClass("selected unselected");
-            });
+            //$("i.icon-eye-open, i.icon-comment").on("click", function () {
+            //    $(this).toggleClass("selected unselected");
+            //});
 
             $("#submit").on("click", function () {
                 var arr1 = $("a.active[rel='tooltip']").map(function () {
@@ -296,8 +297,6 @@
                 step: 1,
                 slide: function (event, ui) {
                     $("#viewable-value").val(ui.value);
-                },
-                change: function (event, ui) {
                     if ($("#commentable").slider("value") > ui.value) {
                         $("#commentable").slider("value", ui.value);
                     }
@@ -314,8 +313,6 @@
                 step: 1,
                 slide: function (event, ui) {
                     $("#commentable-value").val(ui.value);
-                },
-                change: function (event, ui) {
                     if ($("#viewable").slider("value") < ui.value) {
                         $("#viewable").slider("value", ui.value);
                     }
@@ -346,7 +343,24 @@
             });
 
             $(".cube").on("click", function (e) {
-                $(this).toggleClass("scale", 1000);
+                var $context = $(this);
+                if ($(this).hasClass("onTop")) {
+
+                    $context.toggleClass("scale", 500).animate({
+                        top: $context.data("top"),
+                        left: $context.data("left")
+                    }).promise().done(function () {
+                        $(this).toggleClass("onTop");
+                    });
+                }
+                else {
+                    $(this).data("top", $(this).css("top"));
+                    $(this).data("left", $(this).css("left"));
+                    $(this).animate({
+                        top: "0px",
+                        left: "0px"
+                    }).toggleClass("onTop").toggleClass("scale", 500);
+                }
             });
 
         });
