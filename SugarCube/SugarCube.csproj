@@ -247,6 +247,8 @@
     <Content Include="Content\font\fontawesome-webfont.eot" />
     <None Include="Properties\PublishProfiles\alfredchan.com_sugarcube.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <Content Include="Scripts\calendarPicker\jquery.calendarPicker.css" />
+    <Content Include="Scripts\calendarPicker\jquery.mousewheel.js" />
     <Content Include="Scripts\ckeditor\API-CHANGES.md" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />
     <Content Include="Scripts\ckeditor\samples\assets\outputforflash\outputforflash.fla" />
@@ -677,6 +679,8 @@
     <Content Include="Scripts\jquery-1.8.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.23.js" />
     <Content Include="Scripts\jquery-ui-1.8.23.min.js" />
+    <Content Include="Scripts\jquery.autoellipsis.js" />
+    <Content Include="Scripts\calendarPicker\jquery.calendarPicker.js" />
     <Content Include="Scripts\jquery.isotope.js" />
     <Content Include="Scripts\jquery.isotope.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />

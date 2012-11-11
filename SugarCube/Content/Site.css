@@ -60,6 +60,10 @@ textarea {
     display: none;
 }*/
 
+body {
+    padding-top: 60px;
+    /*background-color: #eee;*/
+}
 
 
 .item
@@ -95,10 +99,36 @@ textarea {
 }
 
 .cube {
-    border: 5px solid #00B4FF !important; /*f23996*/
+    border: 5px solid #eee !important; /*f23996*/
     background-color: #fff !important;
     cursor: pointer;
+    line-height:  normal;
+    /*-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;*/
 }
+
+    .cube .inner {
+        margin: 10px;
+   
+    }
+
+    .cube .text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 100px;
+        margin-top: 10px;
+    }
+
+    .cube .title {
+        font-size: 20px;
+    }
+
+    .cube .date {
+        font-size: 12px;
+        color: #999;
+        font-style:italic;
+    }
 
 .pink {
     color: #f23996;
@@ -338,7 +368,8 @@ div[contenteditable], .editablecontent  {
     #newjournal .tab-content, #newjournal .nav-tabs {
         display: none;
     }
-      .form-horizontal .control-label {
+    
+  .form-horizontal .control-label {
     float: none;
     width: auto;
     padding-top: 0;
@@ -356,6 +387,8 @@ div[contenteditable], .editablecontent  {
 
 .onTop {
     z-index: 1000;
-
 }
 
+.fixed {
+    position: fixed !important;
+}

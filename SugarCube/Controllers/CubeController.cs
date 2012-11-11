@@ -17,17 +17,26 @@ namespace SugarCube.Controllers
             cubes = new List<JournalEntry>(){
                 new JournalEntry{ Title = "Hello World 1", Date=DateTime.Today, Text = "This is a short message.", Type="journal" },
                 new JournalEntry{ Title = "Hello World 2", Date=DateTime.Today, Text = "This is a somewhat longer message.", Type="other" },
-                new JournalEntry{ Title = "Hello World 3", Date=DateTime.Today, Text = "This is a message with an image.", Image = "~/Content/Images/logo.png", Type="journal"},
-                new JournalEntry{ Title = "Hello World 4", Date=DateTime.Today, Image = "~/Content/Images/logo.png", Type="journal" },
+                new JournalEntry{ Title = "Hello World 3", Date=DateTime.Today, Text = "This is a message with an image.", Image = "~/Content/Images/7.jpg", Type="journal"},
+                new JournalEntry{ Title = "Hello World 4", Date=DateTime.Today, Image = "~/Content/Images/4.jpg", Type="journal" },
                 new JournalEntry{ Title = "Hello World 5", Date=DateTime.Today, Text = "This is a short message.", Type="other" },
                 new JournalEntry{ Title = "Hello World 6", Date=DateTime.Today, Text = "This is a somewhat longer message.", Type="journal" },
-                new JournalEntry{ Title = "Hello World 7", Date=DateTime.Today, Image = "~/Content/Images/logo.png", Type="journal" },
+                new JournalEntry{ Title = "Hello World 7", Date=DateTime.Today, Image = "~/Content/Images/6.jpg", Type="journal" },
                 new JournalEntry{ Title = "Hello World 8", Date=DateTime.Today, Text = "This is a short message.", Type="other" },
                 new JournalEntry{ Title = "Hello World 9", Date=DateTime.Today, Text = "This is a somewhat longer message.", Type="journal" },
                 new JournalEntry{ Title = "Hello World 10", Date=DateTime.Today, Text = "This is a short message.", Type="journal" },
                 new JournalEntry{ Title = "Hello World 11", Date=DateTime.Today, Text = "This is a somewhat longer message.", Type="other" },
-                new JournalEntry{ Title = "Hello World 12", Date=DateTime.Today, Text = "This is a message with an image.", Image = "~/Content/Images/logo.png", Type="journal"}
+                new JournalEntry{ Title = "Hello World 12", Date=DateTime.Today, Text = "This is a message with an image.", Image = "~/Content/Images/3.jpg", Type="journal"},
+                new JournalEntry{ Title = "Hello World 13", Date=DateTime.Today, Text = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a dapibus lorem. Etiam vel enim vel justo aliquet tempus quis id orci. In ultricies, purus vel adipiscing cursus, nulla nunc luctus ligula, eu faucibus est velit ornare leo. Suspendisse vehicula purus eu nisi mattis vestibulum. Nulla facilisi. Mauris imperdiet aliquet urna, eget gravida dolor lacinia eu. Pellentesque sodales consectetur ante vel consequat. Proin fringilla consectetur dui, sit amet lobortis nulla placerat sodales. Aliquam a facilisis neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse ac leo nec eros malesuada ultricies sed at ipsum.
 
+Fusce sit amet purus et mauris congue mattis sed ut arcu. Praesent faucibus libero sed nulla imperdiet sagittis. Aenean ac magna in risus ullamcorper pulvinar at ut nulla. Phasellus volutpat risus id leo pretium eget venenatis nibh dapibus. Morbi eget dolor dolor. Suspendisse potenti. Aenean vitae diam at purus mattis suscipit sit amet a nibh. Phasellus condimentum rutrum iaculis. Suspendisse accumsan, velit luctus congue condimentum, libero magna pretium sapien, ac semper mi est quis arcu. Duis ultricies lectus id metus pulvinar et consectetur mauris lobortis. Suspendisse purus turpis, condimentum sed commodo sed, vestibulum et velit. Praesent in neque neque. Etiam ullamcorper aliquam nisl a varius. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Vivamus feugiat rhoncus arcu, eu molestie felis tristique vel. Proin congue lobortis elit eu porttitor. Praesent magna ante, placerat nec elementum at, pretium ac lacus. Aliquam lacus est, fermentum quis feugiat eget, rutrum id mi. Morbi placerat nibh a nulla congue consequat. Morbi elementum metus sit amet mauris sodales nec pharetra magna cursus. Praesent egestas dolor et diam dapibus cursus vulputate eros pharetra. Donec adipiscing lectus sed odio ultricies tristique. Duis ac tortor nulla. Mauris elementum lorem sit amet est molestie elementum.
+
+Quisque sit amet libero non diam sodales lacinia a a mauris. Nam sit amet velit magna, at feugiat lectus. Morbi tellus neque, lacinia vel rutrum vitae, feugiat sit amet turpis. Mauris varius, lorem at ultrices eleifend, sem enim convallis nulla, at fermentum leo odio ut neque. Duis et nisi leo, eget euismod ipsum. Etiam viverra suscipit urna nec placerat. Quisque viverra gravida vulputate. Nullam posuere volutpat convallis. Nullam dapibus consequat ornare. Morbi eros ante, fringilla ut scelerisque at, molestie non felis.
+
+In hac habitasse platea dictumst. Praesent ut massa ut odio facilisis lobortis. Suspendisse odio mi, adipiscing id lobortis at, varius vel eros. Nullam scelerisque lobortis dolor sit amet commodo. Duis et dui turpis, vel luctus ante. Donec in hendrerit lacus. Phasellus ut mauris ac nisl mollis iaculis ut ultricies arcu. Cras rhoncus neque ac augue iaculis dictum.", Image = "~/Content/Images/4.jpg", Type="journal"},
+                new JournalEntry{ Title = "Hello World 14", Date=DateTime.Today, Text = "Sed elit leo, fringilla at varius at, iaculis vitae felis. Nunc pulvinar enim ac augue suscipit accumsan. Vestibulum ullamcorper euismod sagittis. Pellentesque risus purus, auctor eget dignissim ac, rutrum sit amet nunc. Fusce vehicula arcu vitae quam luctus tincidunt. Nullam ac orci interdum eros tempor ullamcorper eu vitae metus. Aliquam non enim ut purus rhoncus tempus.", Image = "~/Content/Images/2.jpg", Type="journal"}
             };
 
             permissions = new SelectListItem[] {

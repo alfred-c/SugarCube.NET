@@ -63,6 +63,16 @@ namespace SugarCube
 
             bundles.Add(new ScriptBundle("~/bundles/textchange").Include(
                 "~/Scripts/textchange.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/autoellipsis").Include(
+                "~/Scripts/jquery.autoellipsis.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/calendarPicker").Include(
+                "~/Scripts/calendarPicker/jquery.calendarpicker.js",
+                "~/Scripts/calendarPicker/jquery.mousewheel.js"));
+
+            bundles.Add(new StyleBundle("~/Content/calendarPicker").Include(
+                "~/Scripts/calendarPicker/jquery.calendarPicker.css"));
         }
     }
 }
