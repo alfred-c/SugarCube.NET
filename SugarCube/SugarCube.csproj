@@ -154,21 +154,30 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-noicon.css" />
+    <Content Include="Content\bootstrap-noicon.min.css" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\bootstrap-noicon.css" />
-    <Content Include="Content\bootstrap-noicon.min.css" />
     <Content Include="Content\font-awesome-ie7.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font\fontawesome-webfont.svg" />
+    <Content Include="Content\images\1.jpg" />
+    <Content Include="Content\images\2.jpg" />
+    <Content Include="Content\images\3.jpg" />
+    <Content Include="Content\images\4.jpg" />
+    <Content Include="Content\images\5.jpg" />
+    <Content Include="Content\images\6.jpg" />
+    <Content Include="Content\images\7.jpg" />
     <Content Include="Content\images\brand.png" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\images\icons-sm.png" />
     <Content Include="Content\images\icons.png" />
     <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\menuicons-sm.png" />
+    <Content Include="Content\images\menuicons.png" />
     <Content Include="Content\tests\icons-test.html" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -247,8 +256,14 @@
     <Content Include="Content\font\fontawesome-webfont.eot" />
     <None Include="Properties\PublishProfiles\alfredchan.com_sugarcube.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\calendarPicker\jquery.calendarPicker.css" />
     <Content Include="Scripts\calendarPicker\jquery.mousewheel.js" />
+    <Content Include="Scripts\chosen\chosen-sprite.png" />
+    <Content Include="Scripts\chosen\chosen.css" />
+    <Content Include="Scripts\chosen\chosen.jquery.js" />
+    <Content Include="Scripts\chosen\chosen.jquery.min.js" />
     <Content Include="Scripts\ckeditor\API-CHANGES.md" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />
     <Content Include="Scripts\ckeditor\samples\assets\outputforflash\outputforflash.fla" />
@@ -256,9 +271,6 @@
     <Content Include="Scripts\ckeditor\samples\sample_posteddata.php" />
     <Content Include="Scripts\ckeditor\skins\kama\readme.md" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <None Include="Scripts\jquery-1.8.1.intellisense.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\ckeditor\ckeditor.js" />
     <Content Include="Scripts\ckeditor\config.js" />
     <Content Include="Scripts\ckeditor\contents.css" />
@@ -675,8 +687,9 @@
     <Content Include="Scripts\ckeditor\skins\kama\images\sprites_ie6.png" />
     <Content Include="Scripts\ckeditor\skins\kama\images\toolbar_start.gif" />
     <Content Include="Scripts\ckeditor\styles.js" />
-    <Content Include="Scripts\jquery-1.8.1.js" />
-    <Content Include="Scripts\jquery-1.8.1.min.js" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.23.js" />
     <Content Include="Scripts\jquery-ui-1.8.23.min.js" />
     <Content Include="Scripts\jquery.autoellipsis.js" />
@@ -707,6 +720,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Cube\Index.cshtml" />
     <Content Include="Views\Cube\Cube.cshtml" />
+    <Content Include="Views\Cube\CubeTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

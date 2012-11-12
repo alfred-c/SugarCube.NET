@@ -1,0 +1,79 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CubeTest</title>
+@Styles.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/chosen")
+</head>
+<body>
+    <div class="container-fluid">
+          <div class="row-fluid">
+               <form>
+                <div class="input-append">
+                   
+                    <input type="text" class="pink input-small" style="font-size: 20px;" value="@DateTime.Today.ToString("dd MMM yy")">
+                    
+                    <div class="btn-group">
+                        <button class="btn dropdown-toggle" data-toggle="dropdown"><i class="icon-filter"></i><span class="caret"></span></button>
+                       @* <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                            <li><a tabindex="-1" href="#">Date</a></li>
+                            <li><a tabindex="-1" href="#">Most comments</a></li>
+                            <li><a tabindex="-1" href="#">Most nods</a></li>
+                            <li><a tabindex="-1" href="#">Magic</a></li>
+                        </ul>*@
+                    </div>
+                         
+                </div>
+                  </form>
+                <div class="btn-group span12" data-toggle="buttons-radio">
+                  <button type="button" class="btn"><i class="icon-briefcase"></i></button>
+                  <button type="button" class="btn"><i class="icon-bullhorn"></i></button>
+                  <button type="button" class="btn"><i class="icon-asterisk"></i></button><br />
+                  <button type="button" class="btn"><i class="icon-briefcase"></i></button>
+                  <button type="button" class="btn"><i class="icon-bullhorn"></i></button>
+                  <button type="button" class="btn"><i class="icon-asterisk"></i></button>
+                </div>
+
+              
+                <select id="tagfilter" multiple="multiple" data-placeholder="tags">
+                    <option>long distance</option>
+                    <option>breakups</option>
+                    <option>heartbreaks</option>
+                    <option>flowers</option>
+                    <option>--------</option>
+                    <option>view all</option>
+                </select>
+                <button class="btn"><i class="icon-caret-right"></i></button>
+              
+                  
+      
+          </div>
+
+        <div>
+            <i class="sc-icon-sm-happy"></i>
+            <i class="sc-menuicon-profile"></i><br />
+            <i class="sc-menuicon-mycube"></i><br />
+            <i class="sc-menuicon-sweethearts"></i><br />
+            <i class="sc-menuicon-sugarline"></i><br />
+            <div>
+                <i class="icon-book" style="color: #999; font-size: 24px;"></i>
+                <i class="icon-pencil" style="position: relative; left: -18px; top:3px; color: green; font-size: 20px;"></i>
+            </div>
+            <i class="icon-comments" style="font-size: 24px;"></i>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/chosen")
+    <script type="text/javascript">
+        $("#tagfilter").chosen();
+    </script>
+</body>
+</html>

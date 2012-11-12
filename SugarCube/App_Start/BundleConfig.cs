@@ -73,6 +73,12 @@ namespace SugarCube
 
             bundles.Add(new StyleBundle("~/Content/calendarPicker").Include(
                 "~/Scripts/calendarPicker/jquery.calendarPicker.css"));
+
+            bundles.Add(new StyleBundle("~/Content/chosen").Include(
+                "~/Scripts/chosen/chosen.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/chosen").Include(
+                "~/Scripts/chosen/chosen.jquery.js"));
         }
     }
 }

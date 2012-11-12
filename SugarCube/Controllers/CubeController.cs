@@ -99,5 +99,10 @@ In hac habitasse platea dictumst. Praesent ut massa ut odio facilisis lobortis. 
             return View("Index", new CubeViewModel() { JournalEntries = cubes, Tags = tags, Permissions = permissions });
         }
 
+        public ActionResult CubeTest()
+        {
+            return View();
+        }
+
     }
 }

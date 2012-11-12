@@ -142,12 +142,25 @@ jQuery.fn.calendarPicker = function(options) {
 
   }
 
-  theDiv.click(function(ev) {
-    var el = $(ev.target).closest(".calElement");
-    if (el.hasClass("calElement")) {
-      calendar.changeDate(new Date(parseInt(el.attr("millis"))));
-    }
-  });
+  //theDiv.click(function(ev) {
+  //  var el = $(ev.target).closest(".calElement");
+  //  if (el.hasClass("calElement")) {
+  //    calendar.changeDate(new Date(parseInt(el.attr("millis"))));
+  //  }
+  //});
+
+  //var intervalId;
+  //  theDiv.mousedown(function (e) {
+  //      var el = $(e.target).closest(".calElement");
+  //      intervalId = setInterval(function () {
+  //        if (el.hasClass("calElement")) {
+  //            calendar.changeDate(new Date(parseInt(el.attr("millis"))));
+  //        }
+  //    }, 500);
+  //}).mouseup(function () {
+  //    clearInterval(intervalId);
+  //});
+
 
 
   //if mousewheel

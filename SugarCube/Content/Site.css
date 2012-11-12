@@ -122,6 +122,7 @@ border-radius: 5px;*/
 
     .cube .title {
         font-size: 20px;
+       
     }
 
     .cube .date {
@@ -130,8 +131,13 @@ border-radius: 5px;*/
         font-style:italic;
     }
 
+    .cube img {
+        height: 100px;
+         margin-bottom: 10px;
+    }
+
 .pink {
-    color: #f23996;
+    color: #f23996 !important;
 }
 
 .green {
@@ -391,4 +397,36 @@ div[contenteditable], .editablecontent  {
 
 .fixed {
     position: fixed !important;
+}
+
+/* icons */
+[class^="sc-menuicon-"],
+[class*=" sc-menuicon-"] {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  *margin-right: .3em;
+  line-height: 20px;
+  vertical-align: text-top;
+  background-image: url("images/menuicons-sm.png");
+  background-position: 20px 20px;
+  background-repeat: no-repeat;
+}
+
+
+.sc-menuicon-profile {
+  background-position: -1px -5px;
+}
+
+.sc-menuicon-mycube {
+  background-position: -23px -5px;
+}
+
+.sc-menuicon-sweethearts {
+  background-position: -44px -5px;
+}
+
+.sc-menuicon-sugarline {
+  background-position: -66px -5px;
 }
