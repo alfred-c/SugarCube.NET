@@ -55,7 +55,7 @@ In hac habitasse platea dictumst. Praesent ut massa ut odio facilisis lobortis. 
 
             Random rand = new Random();
             var tagsList = new List<SelectListItem>();
-            for(int i = 1; i <= 30; i++)
+            for (int i = 1; i <= 30; i++)
             {
                 switch (rand.Next(1, 3))
                 {
@@ -104,5 +104,51 @@ In hac habitasse platea dictumst. Praesent ut massa ut odio facilisis lobortis. 
             return View();
         }
 
+        public ActionResult Journal()
+        {
+            JournalEntry viewModel = new JournalEntry
+            {
+                Author = new User { Id = 1, Name = "silverangel" },
+                Date = DateTime.Today,
+                Text = "<p>Lorem ipsum dolor sit amet,<br/><br/> consectetur adipiscing elit. Duis semper lorem sit amet sapien egestas tincidunt. Nam sed nulla vitae massa rutrum tristique ac at dolor. Fusce aliquet sapien eu metus tempus eu vulputate nisl cursus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam consequat dui vitae felis lacinia vel elementum tellus vulputate. Nam justo leo, sagittis sed laoreet at, congue eget urna. Phasellus vulputate diam in velit volutpat sed congue quam tempus. Aliquam erat volutpat. Proin auctor tempor varius. Nulla iaculis velit in ligula tincidunt volutpat. Praesent at nunc sed mauris fermentum aliquet.<br/><br/> <strong>What can I do? Should I keep waiting or move on?</strong></p>",
+                Title = "Should I Text Him?",
+                Type = "journal",
+                Comments = new Comment[] {
+                    new Comment
+                    {
+                        Text="I am so sorry to hear that!",
+                        Author = new User{ Name="purplepig", Gender= GenderType.Female},
+                        Timestamp = DateTime.Today, 
+                        Comments = new Comment[]
+                        {
+                       
+                            new Comment
+                            {
+                                Text="hahaha girls are silly",
+                                Author =new User{Name="meanboy", Gender= GenderType.Male},
+                                Timestamp = DateTime.Today,
+                                Comments = new Comment[]
+                                {
+                                    new Comment
+                                    {
+                                        Text="Boys are",
+                                        Author = new User{ Name="meangirl", Gender= GenderType.Female},
+                                        Timestamp = DateTime.Today
+                                    }
+                                }
+                            },
+                     
+                            new Comment
+                            {
+                                Text = "blah",
+                                Author = new User{Name="girl", Gender= GenderType.Female},
+                                Timestamp = DateTime.Today
+                            }  
+                        }
+                    }
+                }
+            };
+            return View(viewModel);
+        }
     }
 }

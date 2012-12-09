@@ -1,0 +1,36 @@
+﻿@using SugarCube.Models
+
+@model JournalEntry
+
+@{
+    Layout = "~/Views/Shared/_LayoutSimple.cshtml";
+    //Layout = null;
+}
+
+<h2>@Model.Title</h2>
+
+
+<i class="sc-menuicon-profile"></i><a href="#">@Model.Author.Name</a>&nbsp;|&nbsp;@Model.Date.ToString("d MMM yyyy")
+
+
+
+<br />
+@Html.Raw(Model.Text)
+
+<div class="row-fluid actions">
+    <div class="span3">
+        <i class="sc-scicon-nod"></i><a href="#">nod nod!</a>
+    </div>
+    <div class="span9">
+        Share this <a class="btn btn-mini"><i class="icon-envelope"></i></a>&nbsp;<a class="btn btn-mini"><i class="icon-twitter"></i></a>&nbsp;<a class="btn btn-mini"><i class="icon-facebook"></i></a>&nbsp;<a class="btn btn-mini"><i class="icon-google-plus"></i></a>
+    </div>
+</div>
+<div class="row-fluid">
+    <strong>Comments: @Model.CommentCount &nbsp;&nbsp;&nbsp; Nods: @Model.NodCount</strong>
+</div>
+<div class="row-fluid">
+    @foreach (Comment comment in Model.Comments)
+    {
+        @Html.Partial("Comment", comment)
+    }
+</div>

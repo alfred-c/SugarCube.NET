@@ -149,8 +149,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\CubeViewModel.cs" />
+    <Compile Include="Models\GenderType.cs" />
     <Compile Include="Models\JournalEntry.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +181,9 @@
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\menuicons-sm.png" />
     <Content Include="Content\images\menuicons.png" />
+    <Content Include="Content\images\profile.png" />
+    <Content Include="Content\images\scicons-sm.png" />
+    <Content Include="Content\images\scicons.png" />
     <Content Include="Content\tests\icons-test.html" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -707,6 +713,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\textchange.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Cube\Journal.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -721,6 +728,9 @@
     <Content Include="Views\Cube\Index.cshtml" />
     <Content Include="Views\Cube\Cube.cshtml" />
     <Content Include="Views\Cube\CubeTest.cshtml" />
+    <Content Include="Views\Cube\Journal.cshtml" />
+    <Content Include="Views\Shared\_LayoutSimple.cshtml" />
+    <Content Include="Views\Cube\Comment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

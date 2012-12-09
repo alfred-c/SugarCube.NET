@@ -1,0 +1,41 @@
+﻿.actions {
+    border-top: 1px solid #eee;
+     border-bottom: 1px solid #eee;
+}
+
+.comment .comments {
+margin-left: 45px;
+}
+.comment .profile {
+    display: inline-block;
+    float: left;
+    width: 45px;
+}
+    .comment .profile img {
+        height: auto;
+    }
+.comment .content {
+    margin-bottom: 10px;
+}
+
+.comment .bubble {
+    margin-left: 45px;
+    padding: 10px;
+}
+
+.comment .female  .bubble {
+    border: 2px solid lightpink;
+}
+
+.comment .male  .bubble {
+    border: 2px solid lightblue;
+}
+
+
+.female  .btn {
+    background-color: lightpink;
+}
+
+.male  .btn {
+    background-color: lightblue;
+}

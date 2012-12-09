@@ -21,7 +21,7 @@
     }
 }
 
-<div class="item cube @CalculateSize(Model.Text, Model.Image) @Model.Type">
+<div class="item cube @CalculateSize(Model.Text, Model.Image) @Model.Type" data-source="@Url.Action("Journal","Cube")">
       <i class="icon-heart pull-right" style="color: #FFEEFB;"></i>
    <div class="inner">
      
@@ -30,7 +30,7 @@
         <img src="@Url.Content(Model.Image)" /><br />
     }
     <span class="title">@Model.Title</span><br />
-    <span class="date">@Model.Date.ToLongDateString()</span><br />
+    <span class="date">@Model.Date.ToString("d MMM yyyy")</span><br />
       
     <div class="text">@Model.Text</div>
    </div>

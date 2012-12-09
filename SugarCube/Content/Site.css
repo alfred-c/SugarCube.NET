@@ -110,7 +110,7 @@ border-radius: 5px;*/
 
     .cube .inner {
         margin: 10px;
-   
+
     }
 
     .cube .text {
@@ -387,7 +387,7 @@ div[contenteditable], .editablecontent  {
 }
 
 .scale {
-    min-height: 500px;
+    min-height: 600px;
     width: 95%;
 }
 
@@ -429,4 +429,22 @@ div[contenteditable], .editablecontent  {
 
 .sc-menuicon-sugarline {
   background-position: -66px -5px;
+}
+
+[class^="sc-scicon-"],
+[class*=" sc-scicon-"] {
+  display: inline-block;
+  width: 30px;
+  height: 25px;
+  margin-top: 1px;
+  *margin-right: .3em;
+  line-height: 30px;
+  vertical-align: text-top;
+  background-image: url("images/scicons-sm.png");
+  background-position: 30px 25px;
+  background-repeat: no-repeat;
+}
+
+.sc-scicon-nod {
+  background-position: 3px 3px;
 }

@@ -1,0 +1,24 @@
+﻿@using SugarCube.Models
+@model Comment
+
+<div class="comment row-fluid ">
+
+ 
+        <div class="profile ">
+            <img src="@Url.Content("~/Content/images/profile.png")" />
+        </div>
+        <div class="content @Model.Author.Gender.ToString().ToLower()" style="position: relative;">
+            <button class="btn" style="position: absolute; right: 0px; bottom: 0px;">Reply</button>
+            <div class="bubble">
+                <p>@Html.Raw(Model.Text)</p>
+                says <a href="#">@Model.Author.Name</a> on @Model.Timestamp.ToString("MM/d/yyyy hh:mm tt")
+            </div>
+        </div>
+        <div class="comments">
+            @foreach (Comment comment in Model.Comments)
+            {
+                @Html.Partial("Comment", comment)
+            }
+        </div>
+
+</div>
